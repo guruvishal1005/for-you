@@ -1,4 +1,4 @@
-﻿
+﻿﻿
 var $window = $(window), gardenCtx, gardenCanvas, $garden, garden;
 var clientWidth = $(window).width();
 var clientHeight = $(window).height();
@@ -134,3 +134,16 @@ function adjustCodePosition() {
 function showLoveU() {
 	$('#loveu').fadeIn(3000);
 }
+
+function spawnHeart() {
+	const heart = document.createElement('div');
+	heart.classList.add('heart');
+	heart.style.left = Math.random() * window.innerWidth + 'px';
+	heart.style.bottom = '0px';
+	document.body.appendChild(heart);
+  
+	setTimeout(() => heart.remove(), 3000);
+  }
+  
+setInterval(spawnHeart,2000);
+  
